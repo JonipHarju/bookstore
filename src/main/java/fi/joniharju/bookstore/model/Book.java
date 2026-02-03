@@ -1,6 +1,16 @@
 package fi.joniharju.bookstore.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String title;
     private String author;
     private String isbn;
@@ -13,6 +23,18 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Book() {
+
+    }
+
+    public Book(String title, String author, String isbn, int publicationYear, double price) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publicationYear = publicationYear;
+        this.price = price;
     }
 
     public String getAuthor() {
@@ -45,6 +67,12 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book [id=" + id + ", title=" + title + ", author=" + author + ", isbn=" + isbn + ", publicationYear="
+                + publicationYear + ", price=" + price + "]";
     }
 
 }
