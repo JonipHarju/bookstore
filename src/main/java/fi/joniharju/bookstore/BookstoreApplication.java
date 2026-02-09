@@ -26,15 +26,15 @@ public class BookstoreApplication {
 			repository.save(new Book("Meditations", "Marcus Aurelius", "1349-134-1331-334", 175, 130.30));
 			repository.save(new Book("Nalle Puh ja jotain", "Suvi Oksanen", "1349-3434-1331-334", 2010, 15.30));
 
-			// log.info("Get all books");
-			// for (Book book : repository.findAll()) {
-			// log.info(book.toString());
-			// }
+			log.info("Get all books");
+			for (Book book : repository.findAll()) {
+				log.info(book.toString());
+			}
 
-			// log.info("get mika");
-			// for (Book book : repository.findByAuthor("Mika Valtari")) {
-			// log.info(book.toString());
-			// }
+			log.info("get mika");
+			for (Book book : repository.findByAuthor("Mika Valtari")) {
+				log.info(book.toString());
+			}
 
 		};
 	}
