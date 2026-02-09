@@ -40,6 +40,12 @@ public class BookController {
         return "addBook";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editBook(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("book", repository.findById(id));
+        return "editbook";
+    }
+
     @PostMapping("/save")
     public String saveBook(Book book) {
         repository.save(book);
