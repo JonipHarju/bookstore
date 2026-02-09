@@ -17,6 +17,10 @@ public class Book {
     private int publicationYear;
     private double price;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }

@@ -18,6 +18,9 @@
         <td th:text="${book.title}">Title</td>
         <td th:text="${book.isbn}">ISBN</td>
         <td th:text="${book.publicationYear}">Year</td>
+        <td>
+          <a th:href="@{/delete/{id}(id=${book.id})}">Delete</a>
+        </td>
       </tr>
     </table>
   </body>
