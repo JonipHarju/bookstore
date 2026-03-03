@@ -18,12 +18,12 @@ public class BookRestController {
         this.bookRepository = bookRepository;
     }
 
-    @GetMapping("/api/books")
+    @GetMapping("/rest/books")
     public List<Book> getAllBooks() {
         return (List<Book>) bookRepository.findAll();
     }
 
-    @GetMapping("/api/books/{id}")
+    @GetMapping("/rest/books/{id}")
     public Book getBookById(@PathVariable("id") Long id) {
         return bookRepository.findById(id).get();
     }
